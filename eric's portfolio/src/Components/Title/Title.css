@@ -1,0 +1,61 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0;
+}
+
+.title p {
+    color: rgb(222, 222, 222);
+    font-weight: 100;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: "Share Tech", sans-serif;
+}
+
+.title h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    background: linear-gradient(135deg, rgb(87, 0, 128), rgb(11, 27, 205), rgb(207, 36, 36));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    background-size: 300%;
+    animation: movingBG 3s infinite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes movingBG {
+
+    0%,
+    100% {
+
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+}
+
+@media (max-width:760px) {
+    .title p {
+        font-size: 0.6rem;
+    }
+
+    .title h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:500px) {
+    .title p {
+        font-size: 0.4rem;
+    }
+
+    .title h2 {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}

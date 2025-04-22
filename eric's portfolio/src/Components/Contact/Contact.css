@@ -1,0 +1,189 @@
+.contact {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    opacity: 0.8;
+}
+
+.left ul li {
+    list-style: none;
+    font-weight: 100;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.left ul li:hover {
+    text-decoration: underline;
+}
+
+.left ul li i {
+    padding-right: 10px;
+    color: rgb(94, 33, 178);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.icons i {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+#insta {
+    background: linear-gradient(135deg, rgb(255, 57, 123), rgb(232, 40, 40), rgb(255, 137, 27), rgb(121, 2, 148) 0%, rgb(255, 196, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#linkedin {
+    color: rgb(87, 129, 207);
+}
+
+#facebook {
+    color: rgb(23, 23, 145);
+}
+
+.right {
+    flex-basis: 40%;
+    padding-left: 8rem;
+}
+
+.right p {
+    width: 400px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.right form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+form input {
+    padding: 5px 8px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+form textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    padding: 5px 8px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+form button {
+    color: rgb(212, 144, 255);
+    background: transparent;
+    border: 2px solid rgb(94, 0, 128);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(94, 0, 128);
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: rgb(146, 39, 146);
+    box-shadow: 0 0 40px rgb(94, 0, 128);
+}
+
+form button:active {
+    background: rgb(185, 79, 185);
+    box-shadow: 0 0 80px rgb(94, 0, 128);
+}
+
+@media (max-width:1000px) {
+    .left ul li {
+        font-size: 0.8rem;
+    }
+
+    .icons i {
+        font-size: 1.5rem;
+    }
+
+    .right p {
+        width: 350px;
+        font-size: 0.8rem;
+    }
+
+    form label {
+        font-size: 0.7rem;
+    }
+
+    form input {
+        padding: 3px 5px;
+    }
+
+    form textarea {
+        padding: 3px 5px;
+        width: 100%;
+        height: 100px;
+    }
+
+    form button {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width:900px) {
+    .contact {
+        flex-direction: column;
+    }
+
+    .left {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .right {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .right form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right form label {
+        margin-bottom: 10px;
+    }
+}
+
+.right span {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.right span.orange {
+    color: orange;
+}
+
+.right span.green {
+    color: rgb(102, 245, 102);
+}

@@ -1,0 +1,381 @@
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: lighten;
+    opacity: 0.7;
+}
+
+.blackhole {
+    position: fixed;
+    width: 1000px;
+    opacity: 0.3;
+    mix-blend-mode: lighten;
+    right: -10%;
+    top: -5%;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(3, 2, 17);
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0);
+}
+
+.hero-container {
+    z-index: 10;
+}
+
+.hero-title {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5rem;
+    width: 100%;
+    height: auto;
+}
+
+.hero-title h1 {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.hero-title h3 {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, rgb(87, 0, 128), rgb(11, 27, 205), rgb(198, 32, 216));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: movingBG 3s infinite;
+}
+
+.hero-title p span {
+    background: linear-gradient(135deg, rgb(87, 0, 128), rgb(11, 27, 205), rgb(198, 32, 216));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: movingBG 3s infinite;
+}
+
+.hero-title p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.hero-content {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.img-container {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(135deg, rgb(83, 12, 206) 20%, rgb(143, 61, 237));
+    width: 300px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3S ease;
+    opacity: 0.7;
+    box-shadow: -5px -5px 30px rgb(62, 19, 181),
+        /* Top-left corner */
+        5px -5px 30px rgb(95, 19, 181);
+    /* Top-right corner */
+    ;
+    background-size: 300%;
+    animation: movingBG 3s infinite;
+}
+
+.img-container:hover {
+    scale: 1.05;
+    opacity: 1;
+}
+
+.img-container img {
+    width: inherit;
+    filter: brightness(80%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.img-container:hover {
+    top: 30%;
+}
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(135deg, rgb(57, 12, 206) 70%, rgb(95, 19, 181));
+    padding: 60px 40px;
+    border-radius: 20px;
+    opacity: 0.8;
+    color: rgb(161, 161, 161);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: 300%;
+    animation: movingBG 3s infinite;
+    width: 700px;
+    box-shadow: -5px -5px 30px rgb(62, 19, 181),
+        /* Top-left corner */
+        5px -5px 30px rgb(95, 19, 181);
+    /* Top-right corner */
+    ;
+    position: relative;
+}
+
+.hero-card:hover {
+    scale: 1.01;
+    opacity: 1;
+    color: rgb(235, 235, 235);
+}
+
+.hero-card i {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 6rem;
+    color: rgb(133, 147, 248);
+}
+
+.hero-card h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.hero-card h2 {
+    font-size: 2rem;
+    font-family: "Fira Code", monospace;
+    position: relative;
+}
+
+.hero-card h2::before,
+.hero-card h2::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.hero-card h2::before {
+    background-color: rgb(57, 12, 206);
+    animation: typing infinite 5s steps(9);
+}
+
+.hero-card h2::after {
+    background-color: rgb(188, 188, 188);
+    width: 0.125rem;
+    animation: typing infinite 5s steps(9), blinking 700ms infinite linear;
+}
+
+.hero-card p {
+    font-weight: 100;
+    padding: 5px;
+}
+
+@keyframes typing {
+
+    50%,
+    80% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes blinking {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width:1200px) {
+    .img-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-card {
+        height: 200px;
+        width: 500px;
+    }
+
+    .hero-card i {
+        font-size: 4rem;
+    }
+
+    .hero-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .hero-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-card p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:860px) {
+    .blackhole {
+        width: 700px;
+        left: -30%;
+        top: -18%;
+    }
+
+    .hero-title {
+        align-items: center;
+    }
+
+    .hero-container {
+        margin: 0 5rem;
+
+    }
+
+    .hero-title h1 {
+        font-size: 3rem;
+    }
+
+    .hero-title h3 {
+        font-size: 2rem;
+    }
+
+    .hero-title p span {
+        font-size: 1rem;
+    }
+
+    .hero-title p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .img-container {
+        margin: 3rem 0;
+    }
+
+    .hero-card {
+        margin: 5rem 0;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .hero-title h1 {
+        font-size: 2rem;
+    }
+
+    .hero-title h3 {
+        font-size: 1rem;
+    }
+
+    .hero-title p span {
+        font-size: 0.7rem;
+    }
+
+    .hero-title p {
+        font-size: 0.7rem;
+    }
+
+    .img-container {
+        width: 100px;
+        height: 100px;
+        margin: 1rem 0;
+    }
+
+    .hero-card {
+        height: 100px;
+        width: 300px;
+        margin: 3rem 0;
+
+    }
+
+    .hero-card i {
+        font-size: 2rem;
+    }
+
+    .hero-card h3 {
+        font-size: 0.6rem;
+    }
+
+    .hero-card h2 {
+        font-size: .8rem;
+    }
+
+    .hero-card p {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width:560px) {
+    .hero-title h1 {
+        font-size: 1rem;
+    }
+
+    .hero-title h3 {
+        font-size: 0.8rem;
+    }
+
+    .hero-title p span {
+        font-size: 0.5rem;
+    }
+
+    .hero-title p {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width:700px) {
+    .hero-title {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width:380px) {
+    .hero-card {
+        width: 200px;
+    }
+
+    .hero-card i {
+        font-size: 1rem;
+    }
+
+    .hero-card h3 {
+        font-size: 0.4rem;
+    }
+
+    .hero-card h2 {
+        font-size: .6rem;
+    }
+
+    .hero-card p {
+        font-size: 0.3rem;
+    }
+}

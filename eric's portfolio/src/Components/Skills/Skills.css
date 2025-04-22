@@ -1,0 +1,187 @@
+.skills img {
+    width: 65%;
+    mix-blend-mode: lighten;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: glowing 3s infinite;
+}
+
+.skills img:hover {
+    scale: 1.01;
+}
+
+@keyframes glowing {
+
+    0%,
+    50%,
+    70%,
+    90% {
+        opacity: 1;
+    }
+
+    10%,
+    60%,
+    80% {
+        opacity: 0.6;
+    }
+}
+
+.skills {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.designer,
+.coder {
+    position: absolute;
+    top: 30%;
+    color: white;
+    text-align: center;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.designer {
+    left: 0;
+}
+
+.designer h1,
+.coder h1 {
+    margin-bottom: 10px;
+}
+
+.designer p,
+.coder p {
+    opacity: 0.7;
+    font-weight: 100;
+}
+
+.coder {
+    right: 0%;
+}
+
+@media (max-width:1300px) {
+
+    .designer h1,
+    .coder h1 {
+        font-size: 1rem;
+    }
+
+    .designer p,
+    .coder p {
+        font-size: 0.6rem;
+        width: 50ch;
+    }
+}
+
+@media (max-width:1100px) {
+
+    .designer h1,
+    .coder h1 {
+        font-size: 1rem;
+    }
+
+    .designer p,
+    .coder p {
+        font-size: 0.6rem;
+        width: 50ch;
+    }
+
+    .designer {
+        left: -10%;
+    }
+
+    .coder {
+        right: -10%;
+    }
+}
+
+@media (max-width:900px) {
+
+    .designer h1,
+    .coder h1 {
+        font-size: 0.8rem;
+    }
+
+    .designer p,
+    .coder p {
+        font-size: 0.4rem;
+        width: 50ch;
+    }
+}
+
+@media (max-width:700px) {
+
+    .designer,
+    .coder {
+        top: 100%;
+    }
+
+    .designer {
+        left: -10%;
+    }
+
+    .coder {
+        right: -10%;
+    }
+}
+
+@media (max-width:560px) {
+
+    .designer h1,
+    .coder h1 {
+        font-size: 0.6rem;
+    }
+
+    .designer p,
+    .coder p {
+        font-size: 0.2rem;
+        width: 50ch;
+    }
+
+    .designer {
+        left: -20%;
+        transform: translateY(60px);
+    }
+
+    .coder {
+        right: -20%;
+    }
+}
+
+@media (max-width:460px) {
+    .designer {
+        left: -30%;
+    }
+
+    .coder {
+        right: -30%;
+    }
+}
+
+@media (max-width:400px) {
+    .designer {
+        left: -60%;
+    }
+
+    .coder {
+        right: -50%;
+    }
+
+    .designer h1,
+    .coder h1 {
+        font-size: 0.4rem;
+    }
+
+    .designer p,
+    .coder p {
+        font-size: 0.1rem;
+        width: 50ch;
+    }
+}

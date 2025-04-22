@@ -1,0 +1,115 @@
+nav {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0));
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    padding-left: 5rem;
+    cursor: pointer;
+}
+
+.logo span {
+    color: red;
+}
+
+nav ul {
+    padding-right: 5rem;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 30px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav ul li:hover {
+    color: rgba(163, 163, 163, 0.4);
+}
+
+nav ul button {
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(148, 95, 229);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav ul button:hover {
+    background-color: rgb(184, 141, 247);
+    transition: all 0.1s ease;
+}
+
+nav ul button:active {
+    transform: scale(0.9);
+}
+
+#hamburger {
+    display: none;
+}
+
+@media (max-width:960px) {
+    nav ul {
+        position: fixed;
+        padding-top: 5rem;
+        top: 0;
+        right: -200px;
+        flex-direction: column;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        width: 200px;
+        transition: all 0.3s ease;
+    }
+
+    nav ul.show {
+        right: 0;
+    }
+
+    #hamburger {
+        display: block;
+        z-index: 10;
+        font-size: 2rem;
+        margin-right: 6rem;
+        cursor: pointer;
+    }
+
+    nav ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    nav ul button {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 0.8rem;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width:500px) {
+    nav ul {
+        width: 100%;
+        right: -100%;
+    }
+}
