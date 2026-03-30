@@ -1,4 +1,5 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 import './Hero.css'
 import bg from '../../assets/galaxy.mp4'
 import blackhole from '../../assets/blackhole.mp4'
@@ -16,9 +17,13 @@ const Hero = () => {
                     <p>Explore the <span>Unknown Realm</span></p>
                 </div>
                 <div className="hero-content">
-                    <div className="img-container">
+                    <motion.div 
+                        initial={{opacity:0, x:-300}}
+                        whileInView={{opacity:1, x:0}}
+                        transition={{duration:0.7, stiffness:600, type:'spring'}}
+                    className="img-container">
                         <img src={eric} />
-                    </div>
+                    </motion.div>
                     <div className="hero-card">
                         <i class="fa-solid fa-address-card"></i>
                         <h3>Hi There 🖖</h3>

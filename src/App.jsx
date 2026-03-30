@@ -6,12 +6,14 @@ import Projects from "./Components/Projects/Projects"
 import Skills from "./Components/Skills/Skills"
 import SocialMedia from "./Components/SocialMedia/SocialMedia"
 import Title from "./Components/Title/Title"
+import Music from "./Components/Music/Music"
 
 
 function App() {
 
   return (
     <>
+      
       <Navbar />
       <Hero />
       <div className="container">
