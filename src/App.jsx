@@ -23,7 +23,7 @@ function App() {
         <Projects />
         <Title subtitle={"Recent"} title={"Skills"} />
         <Skills />
-        <Title subtitle={"Let's Talk !"} title={"Join Us"} />
+        <Title subtitle={"Let's Talk !"} title={"Connect With Me"} />
         <Contact />
         <Footer />
       </div>

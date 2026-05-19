@@ -39,14 +39,34 @@
     background: linear-gradient(135deg, rgb(255, 57, 123), rgb(232, 40, 40), rgb(255, 137, 27), rgb(121, 2, 148) 0%, rgb(255, 196, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+#insta:hover {
+    background: linear-gradient(135deg, rgb(255, 57, 123), rgb(232, 40, 40), rgb(255, 137, 27), rgb(121, 2, 148) 0%, rgb(255, 196, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px rgb(255, 57, 123), 0 0 10px rgb(232, 40, 40), 0 0 20px rgb(255, 137, 27);
 }
 
 #linkedin {
     color: rgb(87, 129, 207);
+    transition: all 0.3s ease;
+}
+
+#linkedin:hover{
+    color: rgb(87, 129, 207);
+    text-shadow: 0 0 5px rgb(87, 129, 207), 0 0 10px rgb(87, 129, 207), 0 0 20px rgb(87, 129, 207);
 }
 
 #facebook {
     color: rgb(23, 23, 145);
+    transition: all 0.3s ease;
+}
+
+#facebook:hover {
+    color: rgb(23, 23, 145);
+    text-shadow: 0 0 5px rgb(23, 23, 145), 0 0 10px rgb(23, 23, 145), 0 0 20px rgb(23, 23, 145);
 }
 
 .right {

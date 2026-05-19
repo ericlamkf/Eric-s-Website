@@ -1,0 +1,87 @@
+.profile-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.profile-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(160, 100, 255, 0.4) 0%, rgba(200, 160, 255, 0.1) 60%, transparent 80%);
+  filter: blur(15px);
+  z-index: 1;
+}
+
+.ring-outer, .ring-inner {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.ring-outer {
+  width: 105%;
+  height: 105%;
+  border: 1.5px dashed rgba(160, 100, 255, 0.6);
+  animation: spin 20s linear infinite; 
+}
+
+.ring-inner {
+  width: 120%;
+  height: 120%;
+  border: 1px dashed rgba(160, 100, 255, 0.3);
+  /* Spins the opposite way and a bit slower */
+  animation: spin 25s linear infinite reverse; 
+}
+
+/* 3. The Orbiting Particles */
+.particle {
+  position: absolute;
+  background-color: #9d4edd;
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+/* Positioning particles specifically on the rings */
+.p1 { width: 12px; height: 12px; top: 10%; left: 15%; }
+.p2 { width: 8px; height: 8px; bottom: 15%; right: 10%; }
+.p3 { width: 14px; height: 14px; top: 40%; right: -3%; }
+
+/* 4. The Center Avatar */
+.profile-avatar {
+  position: relative;
+  background-color: #3e0075;
+  opacity: 0.8;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  /* Creates the solid white border around the image */
+  border: 1px solid rgb(0, 0, 0); 
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.02);
+  opacity: 1;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The Animation Keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

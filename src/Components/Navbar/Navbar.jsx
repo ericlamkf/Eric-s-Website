@@ -17,7 +17,7 @@ const Navbar = () => {
                 <li><Link to="social-media" smooth={true} offset={-300} duration={500}>Social Media</Link></li>
                 <li><Link to="projects" smooth={true} offset={-300} duration={500}>Projects</Link></li>
                 <li><Link to="skills" smooth={true} offset={-300} duration={500}>Skills</Link></li>
-                <Link to='contact' smooth={true} offset={-300} duration={500}><button>Join Us</button></Link>
+                <Link to='contact' smooth={true} offset={-300} duration={500}><button>Connect with Me!</button></Link>
             </ul>
             <i onClick={showNav} id='hamburger' class="fa-solid fa-burger"></i>
         </nav>

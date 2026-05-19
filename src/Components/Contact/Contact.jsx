@@ -62,9 +62,29 @@ const Contact = () => {
                     <li onClick={hyperlinkGithub}><i class="fa-brands fa-github"></i> https://github.com/ericlamkf</li>
                 </ul>
                 <div className="icons">
-                    <i id='insta' class="fa-brands fa-square-instagram"></i>
-                    <i id='linkedin' class="fa-brands fa-linkedin"></i>
-                    <i id='facebook' class="fa-brands fa-square-facebook"></i>
+                    <a 
+                        href="https://www.instagram.com/ericlam.kf/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        <i id="insta" className="fa-brands fa-square-instagram"></i>
+                    </a>
+
+                    <a 
+                        href="https://www.linkedin.com/in/eric-lam-kah-fai" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        <i id="linkedin" className="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a 
+                        href="https://www.facebook.com/eric.lamkf/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        <i id="facebook" className="fa-brands fa-square-facebook"></i>
+                    </a>
                 </div>
             </div>
             <div className="right">
