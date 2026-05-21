@@ -4,21 +4,43 @@ import Hero from "./Components/Hero/Hero"
 import Navbar from "./Components/Navbar/Navbar"
 import Projects from "./Components/Projects/Projects"
 import Skills from "./Components/Skills/Skills"
-import SocialMedia from "./Components/SocialMedia/SocialMedia"
+import MyJourney from "./Components/MyJourney/MyJourney"
 import Title from "./Components/Title/Title"
 import Music from "./Components/Music/Music"
+import { useScroll, useTransform } from "motion/react"
+import { motion } from "framer-motion"
 
 
 function App() {
+  const { scrollY } = useScroll();
+
+  const overlayOpacity = useTransform(scrollY, [0, 500], [0, 1]);
+  const journeyOverlayOpacity = useTransform(scrollY, [1000, 1500], [0, 1]);
 
   return (
     <>
-      
       <Navbar />
-      <Hero />
+
+      <section className="hero-section-wrapper">
+        <Hero />
+
+        {/* The darkening Overlay */}
+        <motion.div
+          className="hero-dark-overlay"
+          style={{ opacity: overlayOpacity }}
+        />
+      </section>
+
+      <div className="journey-wrapper">
+        <motion.div
+          className="journey-dark-overlay"
+          style={{ opacity: journeyOverlayOpacity }}
+        />
+
+        <Title subtitle={"Everything about"} title={"My Journey"} />
+        <MyJourney />
+      </div>
       <div className="container">
-        <Title subtitle={"Everything about"} title={"Social Media"} />
-        <SocialMedia />
         <Title subtitle={"Previous"} title={"Projects"} />
         <Projects />
         <Title subtitle={"Recent"} title={"Skills"} />

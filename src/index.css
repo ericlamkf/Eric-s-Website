@@ -9,6 +9,43 @@
   padding: 0 6rem;
 }
 
+.journey-wrapper {
+    background-color: #000000;
+    position: relative; 
+    z-index: 10;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px; 
+}
+
+.journey-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    pointer-events: none; /* Crucial: allows you to still click buttons in the journey section! */
+    z-index: 5; /* Ensure it sits above the journey content but below fixed navbars */
+}
+
+.hero-section-wrapper {
+  position: relative;
+  width: 100%;
+  /* Ensure this section is as tall as the viewport */
+  min-height: 100vh; 
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  pointer-events: none; /* Crucial: allows you to still click buttons in the hero section! */
+  z-index: 5; /* Ensure it sits above the hero content/video but below fixed navbars */
+}
 
 body {
   background: rgb(3, 2, 17);

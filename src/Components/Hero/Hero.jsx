@@ -9,8 +9,8 @@ import ProfileCard from '../ProfileCard/ProfileCard'
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
-    // Mouse Parallax Effect
-    const [isCardHovered, setIsCardHovered] = useState(false);
+    // Cursor Text State for Hover Effect on Title
+    const [cursorText, setCursorText] = useState("");
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
@@ -68,12 +68,12 @@ const Hero = () => {
                 }}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{
-                    scale: isCardHovered ? 1 : 0,
-                    opacity: isCardHovered ? 1 : 0
+                    scale: cursorText ? 1 : 0,
+                    opacity: cursorText ? 1 : 0
                 }}
                 transition={{ duration: 0.2 }}
             >
-                Hover over me👆
+                {cursorText}
             </motion.div>
             {/* ------------------------- */}
 
@@ -81,12 +81,21 @@ const Hero = () => {
             <video className='blackhole' autoPlay loop playsInline muted src={blackhole}></video>
             <div className="hero-container">
                 <div className="hero-title">
-                    <h1>Full-Stack</h1>
+                    <h1>
+                        <span
+                            className='hover-trigger-text'
+                            onMouseEnter={() => setCursorText("More towards Java Backend Development✨")}
+                            onMouseLeave={() => setCursorText("")}
+                        >
+                            Full-Stack
+                        </span>
+                    </h1>
                     <h3>Software Engineer</h3>
-                    <p>Based in <span>Petaling Jaya 📌</span></p>
+                    <p>Based in <span>Petaling Jaya, Selangor 📌</span></p>
                 </div>
                 <div className="hero-content">
                     <motion.div 
+                        onMouseEnter={() => setCursorText("It's me 👨‍💻")} onMouseLeave={() => setCursorText("")}
                         initial={{opacity:0, x:-300}}
                         whileInView={{opacity:1, x:0}}
                         transition={{duration:0.7, stiffness:600, type:'spring'}}
@@ -95,8 +104,8 @@ const Hero = () => {
                         <ProfileCard imageSrc={eric}></ProfileCard>
                     </motion.div>
                     <div className="hero-card"
-                    onMouseEnter={() => setIsCardHovered(true)}
-                    onMouseLeave={() => setIsCardHovered(false)}>
+                    onMouseEnter={() => setCursorText("☝️Learn more about me")}
+                    onMouseLeave={() => setCursorText("")}>
                         <i class="fa-solid fa-address-card"></i>
                         <h3>Hi There 🖖</h3>
                         <h2>I'M ERIC.</h2>

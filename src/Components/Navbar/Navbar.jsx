@@ -14,7 +14,7 @@ const Navbar = () => {
             <h1 className='logo'>ERIC <span>.</span></h1>
             <ul className={`${show ? 'show' : ''}`}>
                 <li><Link to="hero" smooth={true} offset={0} duration={500}>Home</Link></li>
-                <li><Link to="social-media" smooth={true} offset={-300} duration={500}>Social Media</Link></li>
+                <li><Link to="my-journey" smooth={true} offset={-300} duration={500}>My Journey</Link></li>
                 <li><Link to="projects" smooth={true} offset={-300} duration={500}>Projects</Link></li>
                 <li><Link to="skills" smooth={true} offset={-300} duration={500}>Skills</Link></li>
                 <Link to='contact' smooth={true} offset={-300} duration={500}><button>Connect with Me!</button></Link>
