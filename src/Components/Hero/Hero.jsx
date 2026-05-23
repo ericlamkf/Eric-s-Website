@@ -6,11 +6,17 @@ import blackhole from '../../assets/blackhole.mp4'
 import eric from '../../assets/eric.png'
 import { useMotionValue, useSpring } from 'framer-motion';
 import ProfileCard from '../ProfileCard/ProfileCard'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
     // Cursor Text State for Hover Effect on Title
     const [cursorText, setCursorText] = useState("");
+
+    // --- Scroll-to-black effect ---
+    const [overlayOpacity, setOverlayOpacity] = useState(0);
+    const scrollAccum = useRef(0);
+    const isLocked = useRef(true);
+    const FADE_THRESHOLD = 600; // total wheel-delta needed to go fully black
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
@@ -27,6 +33,47 @@ const Hero = () => {
         
         window.addEventListener('mousemove', moveCursor);
         return () => window.removeEventListener('mousemove', moveCursor);
+    }, []);
+
+    // Wheel handler: intercept scroll while at top, fade to black
+    useEffect(() => {
+        const handleWheel = (e) => {
+            // Only intercept when page is at the very top and still in lock phase
+            if (window.scrollY === 0 && isLocked.current) {
+                e.preventDefault();
+                // Accumulate — clamp to [0, FADE_THRESHOLD]
+                scrollAccum.current = Math.min(
+                    Math.max(0, scrollAccum.current + e.deltaY),
+                    FADE_THRESHOLD
+                );
+                const opacity = scrollAccum.current / FADE_THRESHOLD;
+                setOverlayOpacity(opacity);
+
+                // Release lock when fully black
+                if (opacity >= 1) {
+                    isLocked.current = false;
+                }
+            }
+        };
+
+        const handleScroll = () => {
+            if (window.scrollY === 0) {
+                // User scrolled back to the top — re-engage the fade
+                isLocked.current = true;
+                scrollAccum.current = 0;
+                setOverlayOpacity(0);
+            }
+            // else: leave overlay as-is — it stays black while hero scrolls away
+        };
+
+        // passive: false is required so we can call preventDefault()
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     // Parallax Effect for Profile Card
@@ -97,7 +144,7 @@ const Hero = () => {
                     <motion.div 
                         onMouseEnter={() => setCursorText("It's me 👨‍💻")} onMouseLeave={() => setCursorText("")}
                         initial={{opacity:0, x:-300}}
-                        whileInView={{opacity:1, x:0}}
+                        animate={{opacity:1, x:0}}
                         transition={{duration:0.7, stiffness:600, type:'spring'}}
                         style={{ x: springX, y: springY }}
                     className="img-container">
@@ -114,7 +161,9 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </div >
+            {/* Black overlay — stays black while hero scrolls away */}
+            <div className="hero-blackout" style={{ opacity: overlayOpacity }} aria-hidden="true" />
+        </div>
     )
 }
 

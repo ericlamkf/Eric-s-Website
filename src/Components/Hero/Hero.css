@@ -9,10 +9,10 @@
 
 .blackhole {
     position: fixed;
-    width: 1000px;
+    width: 820px;
     opacity: 0.3;
     mix-blend-mode: lighten;
-    right: -10%;
+    right: 0;
     top: -5%;
     pointer-events: none;
 }
@@ -27,6 +27,15 @@
     padding-bottom: 2rem;
 }
 
+/* Black overlay — attached to hero section, scrolls with it */
+.hero-blackout {
+    position: absolute;
+    inset: 0;
+    background: #000000;
+    pointer-events: none;
+    z-index: 9998;
+}
+
 .hero-container {
     z-index: 10;
 }
@@ -37,7 +46,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 5rem;
+    padding: 3.5rem 5rem 2rem;
     width: 100%;
     height: auto;
 }
@@ -72,7 +81,7 @@
 }
 
 .hero-content {
-    margin: 2.5rem;
+    margin: 0.5rem 2.5rem 2.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -188,30 +197,31 @@
 
 
 .hover-cursor {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  color: #1a1a2e; 
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Indie Flower", cursive;
-  pointer-events: none; /* CRITICAL: Prevents the badge from blocking clicks! */
-  z-index: 9999; 
-  margin-top: 15px; 
-  margin-left: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    color: #1a1a2e;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Indie Flower", cursive;
+    pointer-events: none;
+    /* CRITICAL: Prevents the badge from blocking clicks! */
+    z-index: 9999;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
-.hover-cursor .img-container{
+.hover-cursor .img-container {
     background-color: #a600c4;
 
 }
 
 /* Optional: Hide the default cursor when hovering over the card */
 .hero-card {
-  cursor: none; 
+    cursor: none;
 }
 
 @keyframes typing {
@@ -471,23 +481,23 @@
     .hero-card {
         width: 100%;
         padding: 25px 15px;
-        margin: 0;
+        margin: 0 1.5rem;
     }
 
     .hero-card i {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-card h3 {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
 
     .hero-card h2 {
-        font-size: 0.95rem;
+        font-size: 0.75rem;
     }
 
     .hero-card p {
-        font-size: 0.75rem;
+        font-size: 0.55rem;
         line-height: 1.3;
     }
 }

@@ -54,7 +54,7 @@
     transition: all 0.3s ease;
 }
 
-#linkedin:hover{
+#linkedin:hover {
     color: rgb(87, 129, 207);
     text-shadow: 0 0 5px rgb(87, 129, 207), 0 0 10px rgb(87, 129, 207), 0 0 20px rgb(87, 129, 207);
 }
@@ -88,25 +88,46 @@
     padding: 10px 0;
 }
 
+.right #result-text {
+    font-weight: 800;
+}
+
 form label {
     font-size: 0.9rem;
     font-weight: 600;
 }
 
 form input {
-    padding: 5px 8px;
-    margin-bottom: 20px;
+    padding: 7px 8px;
+    margin-bottom: 6px;
     border-radius: 10px;
     width: 100%;
     outline: none;
-    border: none;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input.field-error,
+form textarea.field-error {
+    border: 2px solid rgba(255, 80, 80, 0.75);
+    box-shadow: 0 0 8px rgba(255, 80, 80, 0.4);
+}
+
+.error-msg {
+    display: block;
+    color: rgba(255, 130, 130, 0.95);
+    font-size: 0.72rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    margin-top: -2px;
+    letter-spacing: 0.2px;
 }
 
 form textarea {
     outline: none;
     border: none;
     resize: none;
-    padding: 5px 8px;
+    padding: 7px 8px;
     width: 100%;
     height: 100px;
     margin-bottom: 10px;
