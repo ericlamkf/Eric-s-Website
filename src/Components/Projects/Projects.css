@@ -25,6 +25,12 @@
     margin: 60px 0;
 }
 
+.project .image {
+    width: 400px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .project-description {
     flex-basis: 50%;
     padding-left: 8rem;
@@ -43,6 +49,12 @@
     font-size: 0.8rem;
 }
 
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .project-description button {
     margin-top: 20px;
     color: rgb(212, 144, 255);
@@ -55,6 +67,14 @@
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-description a {
+    text-decoration: none;
 }
 
 .project-description button:hover {
@@ -68,7 +88,9 @@
 }
 
 @media (max-width:960px) {
-    .projects video {
+
+    .projects video,
+    .projects .image {
         width: 250px;
     }
 
@@ -107,7 +129,9 @@
 }
 
 @media (max-width:550px) {
-    .projects video {
+
+    .projects video,
+    .projects .image {
         width: 150px;
     }
 
@@ -117,5 +141,9 @@
 
     .project-description p {
         font-size: 0.3rem;
+    }
+
+    .project-description button {
+        font-size: 0.4rem;
     }
 }
