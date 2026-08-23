@@ -7,6 +7,7 @@ import Skills from "./Components/Skills/Skills"
 import MyJourney from "./Components/MyJourney/MyJourney"
 import Title from "./Components/Title/Title"
 import Music from "./Components/Music/Music"
+import ChatWidget from "./Components/ChatWidget/ChatWidget"
 import { useScroll, useTransform } from "motion/react"
 import { motion } from "framer-motion"
 
@@ -49,6 +50,8 @@ function App() {
         <Contact />
         <Footer />
       </div>
+
+      <ChatWidget />
     </>
   )
 }
