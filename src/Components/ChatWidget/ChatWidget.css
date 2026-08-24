@@ -32,14 +32,18 @@
   cursor: pointer;
 
   animation: chat-glow-pulse 2.8s ease-in-out infinite;
-  transition: border-color 0.25s ease, background 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
 .chat-launcher.is-hidden {
   opacity: 0;
   pointer-events: none;
   transform: scale(0.85);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .chat-launcher:hover {
@@ -79,7 +83,9 @@
   border-radius: 50%;
   overflow: hidden;
   display: block;
-  transition: transform 0.35s ease, filter 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
 .chat-launcher-avatar img {
@@ -101,7 +107,7 @@
   overflow: hidden;
   white-space: nowrap;
 
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: "Poppins", "Segoe UI", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--chat-text);
@@ -176,7 +182,7 @@
 
 .chat-header-text h2 {
   margin: 0;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: "Poppins", "Segoe UI", sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--chat-text);
@@ -199,7 +205,9 @@
   border-radius: 8px;
   display: grid;
   place-items: center;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .chat-icon-button:hover:not(:disabled) {
@@ -279,7 +287,10 @@
   border-radius: 999px;
   cursor: pointer;
   text-align: left;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .chat-suggestion:hover {
@@ -379,11 +390,13 @@
 .chat-input-area textarea {
   flex: 1;
   resize: none;
+  margin: 0;
+  min-height: 40px;
   max-height: 110px;
-  padding: 10px 12px;
+  padding: 9px 12px;
   font-family: inherit;
   font-size: 0.85rem;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--chat-text);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(168, 85, 247, 0.3);
@@ -404,15 +417,27 @@
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  display: grid;
-  place-items: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
   background: linear-gradient(135deg, #a855f7, #7c3aed);
   border: none;
   border-radius: 12px;
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.chat-send-button svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .chat-send-button:hover:not(:disabled) {
